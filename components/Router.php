@@ -9,7 +9,7 @@
 
     class Router
     {
-        private $router;
+        private $routes;
 
         /**
          * Router constructor.
@@ -17,7 +17,7 @@
         public function __construct()
         {
             $routesPath = ROOT . 'config/routes.php';
-            $this->routers = include($routesPath);
+            $this->routes = include($routesPath);
         }
 
         /*
