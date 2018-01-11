@@ -16,7 +16,7 @@
          */
         public function __construct()
         {
-            $routesPath = ROOT . 'config/routes.php';
+            $routesPath = ROOT . '/config/routes.php';
             $this->routes = include($routesPath);
         }
 
