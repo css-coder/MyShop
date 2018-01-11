@@ -8,5 +8,5 @@
      */
 
     return array(
-        '' => 'site/index',
+        '' => 'site/index', // action в SiteController
     );
