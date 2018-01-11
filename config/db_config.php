@@ -7,9 +7,9 @@
      *  Назначение: Параметры подключения к бд
      */
 
-    return array(
+    return [
       'host' => 'localhost',
       'dbname' => 'php_store',
       'user' => 'root',
       'password' => ''
-    );
+    ];

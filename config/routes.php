@@ -7,6 +7,6 @@
      *  Назначение: ЧПУ
      */
 
-    return array(
-        '' => 'site/index', // action в SiteController
-    );
+    return [
+        '' => 'site/index', // actionIndex в SiteController
+    ];
