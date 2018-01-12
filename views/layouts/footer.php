@@ -1,14 +1,5 @@
-<?php
-    /**
-     *  MyShop - by Skylake
-     * -----------------------------------------------------
-     *  Файл: footer.php
-     * -----------------------------------------------------
-     *  Назначение: Подвал
-     */
-?>
 
-    <footer id="footer"><!--Footer-->
+  <footer id="footer"><!--Footer-->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
