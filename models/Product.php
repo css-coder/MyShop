@@ -31,4 +31,32 @@
             return $productsList;
 
         }
+
+
+        public static function getProductsListByCategory($categoryId)
+        {
+            if ($categoryId) {
+
+                $db = Db::getConnection();
+                $products = array();
+
+                $result = $db->query('SELECT id, name, price, image, is_new FROM product '
+                    . 'WHERE status = "1" AND category_id = "$category" '
+                    . 'ORDER BY id DESC '
+                    . 'LIMIT ' . self::SHOW_BY_DEFAULT);
+
+                $i = 0;
+                while ($row = $result->fetch()) {
+                    $products[$i]['id'] = $row['id'];
+                    $products[$i]['name'] = $row['name'];
+                    $products[$i]['price'] = $row['price'];
+                    $products[$i]['image'] = $row['image'];
+                    $products[$i]['is_new'] = $row['is_new'];
+                    $i++;
+                }
+
+                return $products;
+
+            }
+        }
     }

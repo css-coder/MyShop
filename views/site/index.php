@@ -7,7 +7,7 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <?php include(ROOT . '/views/layouts/column_left.php'); ?>
+                    <?php include ROOT . '/views/layouts/column_left.php'; ?>
 
                     <div class="col-sm-9 padding-right">
                         <div class="features_items"><!--features_items-->
@@ -23,6 +23,9 @@
                                                 <p><a href="/product/<?php echo $product['id']?>" ><?php echo $product['name']; ?></a></p>
                                                 <a href="/product/<?php echo $product['id']?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                             </div>
+                                            <?php if ($product['is_new']) { ?>
+                                                <img src="/template/images/home/new.png" class="new" alt="">
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -129,4 +132,4 @@
             </div>
         </section>
 
-<?php include (ROOT . '/views/layouts/footer.php'); ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>

@@ -5,7 +5,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <?php includeROOT . '/views/layouts/column_left.php'; ?>
+            <?php include ROOT . '/views/layouts/column_left.php'; ?>
 
             <div class="col-sm-9 padding-right">
                 <div class="product-details"><!--product-details-->
@@ -66,4 +66,4 @@
     </div>
 </section>
 
-<?php include (ROOT . '/views/layouts/footer.php'); ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>
