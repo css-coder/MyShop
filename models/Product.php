@@ -14,9 +14,9 @@
             $productsList = array();
 
             $result = $db->query('SELECT id, name, price, image, is_new FROM product '
-                    . 'WHERE status = "1"'
-                    . 'ORDER BY id DESC '
-                    . 'LIMIT ' . $count);
+                . 'WHERE status = "1"'
+                . 'ORDER BY id DESC '
+                . 'LIMIT ' . $count);
 
             $i = 0;
             while ($row = $result->fetch()) {
@@ -40,10 +40,10 @@
                 $db = Db::getConnection();
                 $products = array();
 
-                $result = $db->query('SELECT id, name, price, image, is_new FROM product '
-                    . 'WHERE status = "1" AND category_id = "$category" '
-                    . 'ORDER BY id DESC '
-                    . 'LIMIT ' . self::SHOW_BY_DEFAULT);
+                $result = $db->query("SELECT id, name, price, image, is_new FROM product "
+                    . "WHERE status = '1' AND category_id = '$categoryId' "
+                    . "ORDER BY id DESC "
+                    . "LIMIT ".self::SHOW_BY_DEFAULT);
 
                 $i = 0;
                 while ($row = $result->fetch()) {
@@ -57,6 +57,21 @@
 
                 return $products;
 
+            }
+        }
+
+        public static function getProductById($id)
+        {
+            $id = intval($id);
+
+            if ($id) {
+
+                $db = Db::getConnection();
+
+                $result = $db->query('SELECT * FROM product WHERE id =' . $id);
+                $result->setFetchMode(PDO::FETCH_ASSOC);
+
+                return $result->fetch();
             }
         }
     }
