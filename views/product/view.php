@@ -29,9 +29,9 @@
                                                 В корзину
                                             </button>
                                         </span>
-                                <p><b>Наличие:</b> На складе</p>
+                                <p><b>Наличие:</b> На складе (<?php echo $product['quantity']; ?> шт.)</p>
                                 <p><b>Состояние:</b> Новое</p>
-                                <p><b>Производитель:</b> D&amp;G</p>
+                                <p><b>Производитель:</b> <?php echo $product['brand']; ?></p>
                             </div><!--/product-information-->
                         </div>
                     </div>

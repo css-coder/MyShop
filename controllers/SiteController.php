@@ -11,6 +11,7 @@
             $categories = array();
             $categories = Category::getCategoriesList();
 
+            // Вывод последних товаров на главной
             $latestProducts = array();
             $latestProducts = Product::getLatestProducts(6);
 
