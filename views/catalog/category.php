@@ -32,6 +32,9 @@
                         <?php } ?>
 
 
+                        <!-- pagination -->
+                        <?php echo $pagination->get(); ?>
+
                     </div><!--features_items-->
 
                 </div>

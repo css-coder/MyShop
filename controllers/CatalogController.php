@@ -14,7 +14,7 @@
 
             // Вывод последних товаров в каталоге
             $latestProducts = array();
-            $latestProducts = Product::getLatestProducts(1);
+            $latestProducts = Product::getLatestProducts(3);
 
             require_once ROOT . '/views/catalog/index.php';
             return true;
