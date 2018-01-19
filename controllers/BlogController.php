@@ -4,7 +4,7 @@
 
     class BlogController
     {
-        public static function actionIndex()
+        public function actionIndex()
         {
             $latestPosts = array();
             $latestPosts = Blog::getBlogPostsListByCategory(2);
