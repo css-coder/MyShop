@@ -1,6 +1,8 @@
 <?php
 
     return [
+
+        'blogcategory/([0-9]+)' => 'blog/category/$1', // actionCategory в BlogController
         'blog' => 'blog/index', // actionIndex в BlogController
 
         'product/([0-9]+)' => 'product/view/$1', // actionView в ProductController

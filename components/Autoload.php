@@ -7,7 +7,7 @@
         );
 
         foreach ($array_paths as $path) {
-            $path = ROOT . $class_name . '.php';
+            $path = ROOT . $path . $class_name . '.php';
 
             if(is_file($path)) {
                 include_once $path;

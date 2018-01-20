@@ -1,16 +1,34 @@
 <?php
 
-    include_once ROOT . '/models/Blog.php';
-
     class BlogController
     {
         public function actionIndex()
         {
-            $latestPosts = array();
-            $latestPosts = Blog::getBlogPostsListByCategory(2);
+
+            $blogCategories = [];
+            $blogCategories = BlogCategory::getBlogCategoryList();
+
+            $latestPosts = [];
+            $latestPosts = Blog::getLatestBlogPosts(2);
 
             require_once ROOT . '/views/blog/index.php';
 
-            return $latestPosts;
+            return true;
         }
+
+        public function actionCategory($blogCategoryById)
+        {
+
+            $blogCategories = [];
+            $blogCategories = BlogCategory::getBlogCategoryList();
+
+            $categoryPosts = [];
+            $categoryPosts = Blog::getBlogPostsListCategoryById($blogCategoryById, 1);
+
+            require_once ROOT . '/views/blog/category.php';
+
+            return true;
+        }
+
+
     }
