@@ -30,5 +30,19 @@
             return true;
         }
 
+        public function actionPost($PostId)
+        {
+
+            $blogCategories = [];
+            $blogCategories = BlogCategory::getBlogCategoryList();
+
+            $post = [];
+            $post = Blog::getPostById($PostId);
+
+            require_once ROOT . '/views/blog/post.php';
+
+            return true;
+        }
+
 
     }

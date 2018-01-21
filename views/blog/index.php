@@ -1,6 +1,4 @@
-<?php
-    include ROOT . '/views/layouts/header.php';
-?>
+<?php include ROOT . '/views/layouts/header.php'; ?>
 
 <section>
     <div class="container">
@@ -10,7 +8,7 @@
             <div class="col-sm-9">
                 <div class="blog-post-area">
                     <h2 class="title text-center">Последние записи в блоге</h2>
-                    <?php foreach ($latestPosts as $post) {?>
+                    <?php foreach ($latestPosts as $post) { ?>
                     <div class="single-blog-post">
                         <h3><?php echo $post['title']; ?></h3>
                         <div class="post-meta">
@@ -23,7 +21,7 @@
                             <img src="images/blog/blog-one.jpg" alt="">
                         </a>
                         <p><?php echo $post['short_description']; ?></p>
-                        <a  class="btn btn-primary" href="">Читать полностью</a>
+                        <a  class="btn btn-primary" href="/post/<?php echo $post['id']; ?>">Читать полностью</a>
                     </div>
                     <hr>
                 <?php } ?>

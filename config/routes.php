@@ -2,6 +2,7 @@
 
     return [
 
+        'post/([0-9]+)' => 'blog/post/$1', // actionPost в BlogController
         'blogcategory/([0-9]+)' => 'blog/category/$1', // actionCategory в BlogController
         'blog' => 'blog/index', // actionIndex в BlogController
 
