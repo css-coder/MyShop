@@ -9,7 +9,7 @@
             $blogCategories = BlogCategory::getBlogCategoryList();
 
             $latestPosts = [];
-            $latestPosts = Blog::getLatestBlogPosts(2);
+            $latestPosts = Blog::getLatestBlogPosts(4);
 
             require_once ROOT . '/views/blog/index.php';
 
@@ -23,23 +23,23 @@
             $blogCategories = BlogCategory::getBlogCategoryList();
 
             $categoryPosts = [];
-            $categoryPosts = Blog::getBlogPostsListCategoryById($blogCategoryById, 1);
+            $categoryPosts = Blog::getBlogPostsListCategoryById($blogCategoryById, 3);
 
             require_once ROOT . '/views/blog/category.php';
 
             return true;
         }
 
-        public function actionPost($PostId)
+        public function actionPost($postId)
         {
 
             $blogCategories = [];
             $blogCategories = BlogCategory::getBlogCategoryList();
 
-            $post = [];
-            $post = Blog::getPostById($PostId);
-
-            require_once ROOT . '/views/blog/post.php';
+            if ($postId) {
+                $post = Blog::getPostById($postId);
+                require_once ROOT . '/views/blog/post.php';
+            }
 
             return true;
         }

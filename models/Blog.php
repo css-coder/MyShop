@@ -40,6 +40,7 @@
                     $posts[$i]['id'] = $row['id'];
                     $posts[$i]['title'] = $row['title'];
                     $posts[$i]['short_description'] = $row['short_description'];
+                    $i++;
                 }
 
                 return $posts;

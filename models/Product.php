@@ -43,7 +43,7 @@
 
                 $db = Db::getConnection();
                 $products = array();
-                $result = $db->query("SELECT id, name, price, image, is_new FROM product WHERE status = '1' AND category_id = '$categoryId' ORDER BY id ASC LIMIT " .$count . ' OFFSET '. $offset);
+                $result = $db->query("SELECT id, name, price, image, is_new FROM product WHERE status = '1' AND category_id = '$categoryId' ORDER BY id ASC LIMIT " . $count . " OFFSET " . $offset);
 
                 $i = 0;
                 while ($row = $result->fetch()) {

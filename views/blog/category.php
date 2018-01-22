@@ -26,12 +26,8 @@
                         <hr>
                     <?php } ?>
                     <div class="pagination-area">
-                        <ul class="pagination">
-                            <li><a href="" class="active">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href=""><i class="fa fa-angle-double-right"></i></a></li>
-                        </ul>
+                        <!-- pagination -->
+                        <?php //echo $pagination->get(); ?>
                     </div>
                 </div>
             </div>
