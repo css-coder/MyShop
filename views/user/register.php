@@ -5,27 +5,27 @@
             <div class="row">
 
                 <div class="col-sm-4 col-sm-offset-4 padding-right">
-
-                    <?php if (isset($errors) && is_array($errors)): ?>
+                    <?php if ($result) { ?>
+                    <p>Вы зареганы!!!</p>
+                    <?php } else { ?>
+                    <?php if (isset($errors) && is_array($errors)) { ?>
                         <ul>
-                            <?php foreach ($errors as $error): ?>
+                            <?php foreach ($errors as $error) { ?>
                                 <li> - <?php echo $error; ?></li>
-                            <?php endforeach; ?>
+                            <?php } ?>
                         </ul>
-                    <?php endif; ?>
+                    <?php } ?>
 
                     <div class="signup-form"><!--sign up form-->
-                        <h2>Вход на сайт</h2>
+                        <h2>Регистрация на сайте</h2>
                         <form action="#" method="post">
+                            <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
                             <input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>"/>
                             <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
-                            <input type="submit" name="submit" class="btn btn-default" value="Вход" />
+                            <input type="submit" name="submit" class="btn btn-default" value="Регистрация" />
                         </form>
                     </div><!--/sign up form-->
-
-
-                    <br/>
-                    <br/>
+                    <?php } ?>
                 </div>
             </div>
         </div>
