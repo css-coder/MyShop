@@ -90,9 +90,11 @@
             return true;
         }
 
+        /**
+         * Удаляем данные о пользователе из сессии
+         */
         public function actionLogout()
         {
-            session_start();
             unset($_SESSION['user']);
             header("Location: /");
         }

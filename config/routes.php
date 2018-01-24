@@ -13,6 +13,7 @@
         'category/([0-9]+)' => 'catalog/category/$1', // actionCategory в CatalogController
 
         'user/login' => 'user/login', // actionLogin в UserController
+        'user/logout' => 'user/logout', // actionLogout в UserController
         'user/register' => 'user/register', // actionRegister в UserController
 
         'cabinet' => 'cabinet/index', // actionCabinet в CabinetController

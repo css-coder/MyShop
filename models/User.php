@@ -128,18 +128,41 @@
          */
         public static function auth($userId)
         {
-            session_start();
             $_SESSION['user'] = $userId;
         }
 
         public static function checkLogged()
         {
-            session_start();
             // Если сессия есть, вернем идентификатор пользователя
             if (isset($_SESSION['user'])) {
                 return $_SESSION['user'];
             }
 
             header("Location: /user/login");
+        }
+
+        public static function isGuest()
+        {
+            if (isset($_SESSION['user'])) {
+                return false;
+            }
+            return true;
+        }
+
+        public static function checkUserById($id)
+        {
+            if($id) {
+                $db = Db::getConnection();
+                $sql = ('SELECT * FROM user WHERE id = :id');
+
+                $result = $db->prepare($sql);
+                $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+                // Указываем что хотим получить данные в виде массива
+                $result->setFetchMode(PDO::FETCH_ASSOC);
+                $result->execute();
+
+                return $result->fetch();
+            }
         }
     }

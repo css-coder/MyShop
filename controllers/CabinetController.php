@@ -5,10 +5,11 @@
 
         public function actionIndex()
         {
+            // Получаем id пользователя из сессии
             $userId = User::checkLogged();
-            $user = User::checkName();
 
-            echo $userId;
+            // Получаем инфу о пользователе из БД
+            $user = User::checkUserById($userId);
 
             require_once ROOT . '/views/cabinet/index.php';
 
