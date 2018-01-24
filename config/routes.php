@@ -16,6 +16,8 @@
         'user/logout' => 'user/logout', // actionLogout в UserController
         'user/register' => 'user/register', // actionRegister в UserController
 
+        'cabinet/history' => 'cabinet/history', // actionHistory в CabinetController
+        'cabinet/edit' => 'cabinet/edit', // actionEdit в CabinetController
         'cabinet' => 'cabinet/index', // actionCabinet в CabinetController
 
         '' => 'site/index', // actionIndex в SiteController

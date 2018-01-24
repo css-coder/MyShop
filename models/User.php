@@ -29,14 +29,14 @@
          */
         public static function checkName($name)
         {
-            if (strlen($name) >= 3) {
+            if (strlen($name) >= 2) {
                 return true;
             }
             return false;
         }
 
         /**
-         * Проверяет имя: не меньше, чем 6 символов
+         * Проверяет пароль: не меньше, чем 6 символов
          */
         public static function checkPassword($password)
         {
@@ -164,5 +164,23 @@
 
                 return $result->fetch();
             }
+        }
+
+        /**
+         * Редактирование данных пользователя
+         * @param string $name
+         * @param string $password
+         */
+        public static function edit($id, $name, $password)
+        {
+            $db = Db::getConnection();
+
+            $sql = ('UPDATE user SET user_name = :user_name, password = :password WHERE id = :id');
+
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $id, PDO::PARAM_INT);
+            $result->bindParam(':user_name', $name, PDO::PARAM_STR);
+            $result->bindParam(':password', $password, PDO::PARAM_STR);
+            return $result->execute();
         }
     }
