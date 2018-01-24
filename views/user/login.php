@@ -6,13 +6,13 @@
 
                 <div class="col-sm-4 col-sm-offset-4 padding-right">
 
-                    <?php if (isset($errors) && is_array($errors)): ?>
+                    <?php if (isset($errors) && is_array($errors)) { ?>
                         <ul>
-                            <?php foreach ($errors as $error): ?>
+                            <?php foreach ($errors as $error) { ?>
                                 <li> - <?php echo $error; ?></li>
-                            <?php endforeach; ?>
+                            <?php } ?>
                         </ul>
-                    <?php endif; ?>
+                    <?php } ?>
 
                     <div class="signup-form"><!--sign up form-->
                         <h2>Вход на сайт</h2>

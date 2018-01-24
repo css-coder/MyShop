@@ -15,5 +15,7 @@
         'user/login' => 'user/login', // actionLogin в UserController
         'user/register' => 'user/register', // actionRegister в UserController
 
+        'cabinet' => 'cabinet/index', // actionCabinet в CabinetController
+
         '' => 'site/index', // actionIndex в SiteController
     ];
