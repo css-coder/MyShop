@@ -14,7 +14,7 @@
         }
 
         /*
-         *  Returns request string
+         *  Возвращает строку запроса
          */
 
         private function getURI()
