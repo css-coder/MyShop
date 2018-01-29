@@ -1,6 +1,6 @@
 <?php
 
-    function __autoload($class_name) {
+    function autoload($class_name) {
         # Список всех каталогов классов в массиве.
         $array_paths = [
             '/models/',
@@ -15,3 +15,6 @@
             }
         }
     }
+
+    // Регисрация классов
+    spl_autoload_register('autoload');
