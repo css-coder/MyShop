@@ -25,9 +25,11 @@
                         </div>
                         <hr>
                     <?php } ?>
+
+
                     <div class="pagination-area">
                         <!-- pagination -->
-                        <?php //echo $pagination->get(); ?>
+	                    <?php echo $pagination->get(); ?>
                     </div>
                 </div>
             </div>

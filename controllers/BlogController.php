@@ -9,21 +9,26 @@
             $blogCategories = BlogCategory::getBlogCategoryList();
 
             $latestPosts = [];
-            $latestPosts = Blog::getLatestBlogPosts(4);
+            $latestPosts = Blog::getLatestBlogPosts(3);
 
             require_once ROOT . '/views/blog/index.php';
 
             return true;
         }
 
-        public function actionCategory($blogCategoryById)
+        public function actionCategory($blogCategoryById, $page = 1)
         {
 
             $blogCategories = [];
             $blogCategories = BlogCategory::getBlogCategoryList();
 
             $categoryPosts = [];
-            $categoryPosts = Blog::getBlogPostsListCategoryById($blogCategoryById, 3);
+            $categoryPosts = Blog::getBlogPostsListCategoryById($blogCategoryById, 2, $page);
+
+            $total = Blog::getTotalPostsInCategory($blogCategoryById);
+
+	        // Создаем объект Pagination - постраничная навигация
+	        $pagination = new Pagination($total, $page, 2, 'page-');
 
             require_once ROOT . '/views/blog/category.php';
 
