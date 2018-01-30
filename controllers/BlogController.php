@@ -37,7 +37,6 @@
 
         public function actionPost($postId)
         {
-
             $blogCategories = [];
             $blogCategories = BlogCategory::getBlogCategoryList();
 
@@ -48,6 +47,4 @@
 
             return true;
         }
-
-
     }

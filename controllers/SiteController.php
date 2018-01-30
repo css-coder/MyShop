@@ -16,4 +16,12 @@
             return true;
         }
 
+	    public function actionContacts()
+	    {
+		    echo 'Страница контактов';
+
+		    require_once ROOT . '/views/site/contacts.php';
+		    return true;
+	    }
+
     }
